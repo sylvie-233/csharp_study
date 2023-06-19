@@ -4,7 +4,7 @@
 >
 > Date: 23/6/11
 >
-> Point: Unity Galgame教程P21
+> Point: Unity Galgame教程P31
 
 [TOC]
 
@@ -66,6 +66,10 @@
 
 
 
+### Component
+
+#### AudioSource
+
 
 
 
@@ -83,6 +87,13 @@ UnityEngine:
 			sprite:
 		Text:
 			text:
+	AudioSource:
+		clip:
+		loop:
+		Play():
+		PlayOneShot():
+		Stop():
+	AudioSourceManager:
 	Debug:
 		Log():
 	GameObject:
@@ -94,6 +105,11 @@ UnityEngine:
 		---
 	Resources:
 		Load():
+	Transform:
+		eulerAngles:
+		localPosition:
+	Vector3:
+    	zero:
 ```
 
 
