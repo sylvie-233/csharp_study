@@ -4,7 +4,7 @@
 >
 > Date: 23/6/11
 >
-> Point: Unity Galgame教程P31
+> Point: Unity Galgame教程P51
 
 [TOC]
 
@@ -85,6 +85,7 @@ UnityEngine:
 	UI:
 		Image:
 			sprite:
+			SetNativeSize():
 		Text:
 			text:
 	AudioSource:
