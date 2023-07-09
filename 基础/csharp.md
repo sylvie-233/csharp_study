@@ -15,6 +15,13 @@
 ```
 dotnet:
 	--version:
+	add:
+	ef:
+		database:
+			update:
+		migrations:
+			add:
+				init:
 	watch:
 ```
 
@@ -33,6 +40,14 @@ nuget:
 
 ## 核心内容
 
+### Linq
+
+
+
+### Thread
+
+
+
 
 
 
@@ -43,7 +58,12 @@ nuget:
 
 ```
 System:
-	
+	Collections:
+		Generic:
+	Linq:
+	Text:
+	Threading:
+		Tasks:
 ```
 
 
