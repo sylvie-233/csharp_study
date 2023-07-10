@@ -40,7 +40,7 @@ razor pages:
 
 
 
-#### .csproj
+#### `.csproj`
 
 ```
 <Project 
@@ -245,7 +245,7 @@ ViewComponent:
 
 
 
-## API(Microsoft)
+## API
 
 ### AspNetCore
 

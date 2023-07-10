@@ -321,6 +321,24 @@ NetworkTransform:
 
 
 
+### 2D
+
+#### Tilemap
+
+##### RuleTile
+
+##### AnimatedTile
+
+
+
+
+
+
+
+
+
+
+
 ### 3D
 
 #### Cube
@@ -415,6 +433,12 @@ Renderer:
 ```
 
 
+
+#### SpriteRenderer
+
+
+
+#### TilemapRenderer
 
 
 
