@@ -40,6 +40,17 @@ ab包依赖信息
 
 
 
+### 编辑器扩展
+
+```
+:
+	HeaderAttribute:
+```
+
+
+
+
+
 
 
 ## 核心内容
@@ -89,7 +100,7 @@ Camera:
 
 ```
 Animator:
-	Controller:
+	Controller: 动画控制器
 	Avatar:
 	ApplyRootMotion:
 	UpdateMode:
@@ -97,6 +108,20 @@ Animator:
 ```
 
 
+
+AnyState、Entry、Exit
+
+`.anim`动画切片
+
+
+
+
+
+
+
+##### AnimatorController
+
+##### Animation
 
 
 
@@ -331,6 +356,8 @@ NetworkTransform:
 
 
 
+#### PhysicsMaterial2D
+
 
 
 
@@ -377,6 +404,16 @@ Cube:
 ### physics
 
 #### BoxCollider2D
+
+#### CapsuleCollider2D
+
+#### Rigidbody2D
+
+```
+
+```
+
+
 
 
 
@@ -599,7 +636,8 @@ UnityEngine:
 		Text:
 			text:
 	Animator:
-		
+		GetFloat():
+		SetFloat():
 	Application:
 	streamingAssetsPath:
 		persistentDataPath():
@@ -627,6 +665,8 @@ UnityEngine:
 	GameObject:
 		FindGameObjectsWithTag():
 		SetActive():
+	Gizmos:
+		DrawWireSphere():
 	Input:
 		GetAxis():
 		GetKeyDown():
@@ -635,17 +675,28 @@ UnityEngine:
 		ToJson():
 	KeyCode:
 		Space:
+	LayerMask:
+	Mathf:
+		Abs():
 	MonoBehaviour:
 		Awake(): 
 		Start():
 		Update():
+		OnDrwaGizmos():
+		OnDrwaGizmosSelected():
 		---
 		transform:
 		GetComponent():
 		Instantiate():
 		StartCoroutine():
+	Physics2D:
+		OverlapCircle():
 	Resources:
 		Load():
+	Rigidbody2D:
+		velocity:
+			x:
+			y:
 	ScriptableObject:
 	Sprite:
 	Transform:
