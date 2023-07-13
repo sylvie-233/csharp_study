@@ -4,13 +4,23 @@
 >
 > Date: 23/6/11
 >
-> Point:
+> Point: xlua P12
 
 [TOC]
 
 ## 基础介绍
 
 ### AssetBundle
+
+`.unity3d`
+
+
+
+Files.txt资源列表
+
+
+
+
 
 #### AssetBundleManifest
 
@@ -45,6 +55,7 @@ ab包依赖信息
 ```
 :
 	HeaderAttribute:
+    MenuItemAttribute:
 ```
 
 
@@ -95,6 +106,16 @@ Camera:
 
 
 ### Animation
+
+Animation Event 为特定帧绑定回调函数
+
+
+
+
+
+
+
+
 
 #### Animator
 
@@ -271,6 +292,15 @@ Text:
 
 
 
+#### Toggle
+
+```
+Toggle:
+	
+```
+
+
+
 
 
 
@@ -286,12 +316,30 @@ ContentSizeFitter:
 
 
 
+#### GraphicRaycaster
+
+```
+GraphicRaycaster:
+	
+```
+
+
+
 
 
 #### GridLayoutGroup
 
 ```
 GridLayoutGroup:
+	
+```
+
+
+
+#### Mask
+
+```
+Mask:
 	
 ```
 
@@ -343,6 +391,23 @@ NetworkManagerHUD:
 NetworkTransform:
 	
 ```
+
+
+
+
+
+#### ScrollRect
+
+```
+ScrollRect:
+	
+```
+
+
+
+
+
+
 
 
 
@@ -406,6 +471,8 @@ Cube:
 #### BoxCollider2D
 
 #### CapsuleCollider2D
+
+#### CircleCollider2D
 
 #### Rigidbody2D
 
@@ -593,13 +660,103 @@ PhotonTransformView:
 
 #### xLua
 
+```
+XLua:
+	CSharpCallLuaAttribute:
+	CustomLoader: 委托
+	LuaEnv:
+		Global:
+			Get():
+		AddLoader():
+		Dispose():
+		DoString():
+	LuaFunction:
+		Call():
+	LuaTable:
+		Length:
+		Get():
+		GetKeys():
+		
+```
+
+
+
+Unity中可以用TextAsset格式加载lua文件
+
+通过执行require来加载lua代码
+
+
+
+自定义Loader：获取加载路径 
+
+通过委托delegate	获取lua中的function（使用[CSharpCallLua]标注）
+
+
+
+
+
+
+
+Lua调用C#代码
+
+```
+CS:
+	UnityEngine:
+		GameObject:
+			Destory():
+			Find():
+		Time:
+			deltaTime:
+			timeScale:
+```
+
+CS命名空间
+
+
+
+
+
 
 
 
 
 #### toLua
 
+```
+LuaInterface:
+	LuaBinder:
+		Bind():
+	LuaFunction:
+		Call():
+	LuaResLoader:
+	LuaState:
+		DoFile():
+		GetFunction():
+		Start():
+```
 
+
+
+
+
+lua调用Unity
+
+```
+UnityEngine:
+	AudioSource:
+	Color:
+	Gamobject:
+		Find(): 
+	Input:
+		GetAxis():
+	Rigidbody:
+		AddForce():
+	WWW():
+	
+coroutine:
+	start():
+	www():
+```
 
 
 
@@ -619,9 +776,19 @@ UnityEngine:
 		UnityAction:
 	EventSystems:
 		IBeginDragHandler:
+		IDragHandler:
+		IDropHandler:
+		IEndDragHandler:
+		IInitializePotentialDragHandler:
 		IPointerClickHandler:
+		IPointerDownHandler:
+		IPointerEnterHandler:
+		IPointerExitHandler:
 		IPointerUpHandler:
+		IScrollHandler:
+		ISelectHandler:
 		PointerEventData:
+			position:
 	Networking:
 		ClientRpcAttribute:
 		CommandAttribute:
@@ -629,18 +796,31 @@ UnityEngine:
 			isLocalPlayer:
 			OnStartLocalPlayer():
 		SyncVarAttribute:
+	SceneManagement:
+		SceneManager:
+			LoadScene():
 	UI:
+		ContentSizeFitter:
+		GridLayoutGroup:
+			
 		Image:
 			sprite:
 			SetNativeSize():
+		ScrollRect:
+			horizontalNormalizedPosition:
 		Text:
 			text:
 	Animator:
+		GetCurrentAnimatorStateInfo():
 		GetFloat():
+		Play():
 		SetFloat():
 	Application:
-	streamingAssetsPath:
-		persistentDataPath():
+		dataPath:
+		persistentDataPath:
+        streamingAssetsPath:
+            persistentDataPath():
+        temporaryCachePath:
 	AssetBundle:
 		LoadFromFile():
 		LoadFromFileAsync():
@@ -648,8 +828,14 @@ UnityEngine:
 		LoadFromStream():
 		UnloadAllAssetBundles():
 		---
+		LoadAllAssets():
 		LoadAsset():
 		Unload():
+	AssetBundleManifest:
+		GetAllDependencies():
+    AssetDatabase:
+    	Refresh():
+    AudioClip:
 	AudioSource:
 		clip:
 		loop:
@@ -657,17 +843,31 @@ UnityEngine:
 		PlayOneShot():
 		Stop():
 	AudioSourceManager:
+	BuildPipeline:
+		BuildAssetBundles():
 	Camera:
+		main:
+			ScreenToWorldPoint():
+	Collider2D:
+		tag:
+		OnTriggerEnter2D():
+		OnTriggerExit2D():
+		OnTriggerStay2D():
 	CreateAssetMenuAttribute:
 		TextAreaAttribute:
 	Debug:
 		Log():
 	GameObject:
+		activeSelf:
+		transform:
+			GetComponent():
+		Destroy():
 		FindGameObjectsWithTag():
 		SetActive():
 	Gizmos:
 		DrawWireSphere():
 	Input:
+		mousePosition:
 		GetAxis():
 		GetKeyDown():
 	JsonUtility:
@@ -678,19 +878,37 @@ UnityEngine:
 	LayerMask:
 	Mathf:
 		Abs():
+		Clamp():
+		Lerp():
 	MonoBehaviour:
 		Awake(): 
 		Start():
 		Update():
-		OnDrwaGizmos():
-		OnDrwaGizmosSelected():
+		OnDrawGizmos():
+		OnDrawGizmosSelected():
+		OnDrag():
+		OnBeginDrag():
+		OnEndDrag():
+		OnPointerEnter():
+		onPointerExit():
+		IsRaycastLocationValid():
 		---
 		transform:
+		CancelInvoke():
 		GetComponent():
 		Instantiate():
+		Invoke():
+		InvokeRepeating():
 		StartCoroutine():
+		StopAllCoroutines():
 	Physics2D:
 		OverlapCircle():
+		OverlapPointAll():
+	Quaternion:
+		Euler():
+	RectTransform:
+		anchoredPosition:
+		GetWorldCorners():
 	Resources:
 		Load():
 	Rigidbody2D:
@@ -699,14 +917,23 @@ UnityEngine:
 			y:
 	ScriptableObject:
 	Sprite:
+	TextAsset:
 	Transform:
 		eulerAngles:
 		localPosition:
 		getChild():
 		LookAt():
+		SetParent():
 		Translate():
 	Vector3:
+		normalized:
     	zero:
+    	Distance():
+    	
+    WWW:
+    	LoadFromCacheOrDownload():
+    	---
+    	asssetBundle:
 ```
 
 

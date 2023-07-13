@@ -60,10 +60,39 @@ nuget:
 System:
 	Collections:
 		Generic:
+		List:
+		Queue:
+			Dequeue():
+			Enqueue():
+	IO:
+		File:
+			ReadAllText():
+		StringReader:
+		TextReader:
 	Linq:
+	Net:
+		Http:
+		Sockets:
+			Socket:
+				Bind():
+				Listen():
+				Receive():
+		AddressFamily:
+		IPAddress:
+		IPEndPoint:
+		ProtocolType:
+		SocketType:
 	Text:
+		Encoding:
+			UTF8:
+				GetBytes():
 	Threading:
+		ParameterizedThreadStart:
 		Tasks:
+		Thread:
+			Sleep():
+			Start():
+		ThreadStart:
 ```
 
 
