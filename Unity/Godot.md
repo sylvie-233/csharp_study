@@ -4,7 +4,7 @@
 >
 > Date" 23/7/14
 >
-> Point: Godot入门教程P29
+> Point:
 
 [TOC]
 
@@ -160,6 +160,9 @@ CanvasItem: Node2D、Control
 	AnimatedSprite2D:
 		play():
 		stop():
+	AnimationPlayer:
+		play():
+		stop():
 	Area2D:
         vec:
         	x:
@@ -179,6 +182,11 @@ CanvasItem: Node2D、Control
 		size():
 	AudioStreamPlayer:
 		play():
+	BaseButton:
+		pressed:
+		_on_pressed():
+	BitMap:
+		
 	Button:
 		process_mode:
 		pressed:
@@ -198,8 +206,15 @@ CanvasItem: Node2D、Control
     	collison_mask:
     	collision_priority:
     	input_pickable:
+    Container:
+    	pre_sort_children:
+    Control:
+    	resized:
+    	_gui_input(event):
+    	---
+    	grab_focus():
 	Image:
-		laod():
+		load():
 	ImageTexture:
 		create_from_image():
 	Input:
@@ -288,11 +303,20 @@ CanvasItem: Node2D、Control
 		num():
 		---
 	SubViewport:
-	Texure2D:
+	Texture2D:
+	TextureButton:
+		texture_click_mask:
+	Timer:
+		autostart:
+		start():
+		stop():
+		timeout:
 	Transform2D:
 	Vector2:
 		x:
 		y:
+	VideoStreamPlayer:
+		 
 	Viewport:
 		world_2d:
 		push_input(): 手动触发input事件
@@ -429,16 +453,51 @@ Node:
 		Material:
 		---
 		Control:
+			Layout:
+			Localization:
+			Tooltip:
+			Focus:
+			Mouse:
+			Input:
+			Theme:
+			---
 			BaseButton:
 				Button:
+					CheckButton:
 					ColorPickerButton:
+					MenuButton:
+					OptionButton:
+				LinkButton:
+				TextureButton:
 			ColorRect:
 			Container:
 				BoxContainer:
 					ColorPicker:
+					HBoxContainer:
+					VBoxContainer:
+				CenterContainer:
+				FlowContainer:
+				GridContainer:
+				SplitContainer:
+				MarginContainer:
+				PanelContainer:
 				ScrollContainer:
+				SubViewportContainer:
+			GraphEdit:
+			ItemList:
 			Label:
+			LineEdit:
+			MenuBar:
+			NinePatchRect:
+			Range:
+				SpinBox:
+				TextureProgressBar:
 			RichTextLabel:
+			Separator:
+			TextEdit:
+				CodeEdit:
+			TextureRect:
+			VideoStreamPlayer:
 		Node2D:
 			Bone2D:
 			Camera2D:
@@ -464,6 +523,7 @@ Node:
 			AudioListener2D:
 			AudioStreamPlayer2D:
 	CanvasLayer:
+		
 	HTTPRequest:
 	MultiplayerSpawner:
 	NavigationAgent2D:
@@ -477,6 +537,8 @@ Node:
 		VisualInstance3D:
 			GPUParticlesAttractor3D:
 				GPUParticlesAttractorBox3D:
+	Timer:
+		
 	ViewPort:
 		SubViewPort:
 		Window:
